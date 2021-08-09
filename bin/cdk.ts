@@ -11,7 +11,12 @@ builder
   .build()
   .then(() => {
     const app = new cdk.App();
-    new SlsNextStack(app, myPackage.name, {});
+    new SlsNextStack(app, myPackage.name, {
+      env: {
+        account: process.env.CDK_DEFAULT_ACCOUNT,
+        region: 'us-east-1'
+      }
+    });
   })
   .catch((e) => {
     console.log(e);

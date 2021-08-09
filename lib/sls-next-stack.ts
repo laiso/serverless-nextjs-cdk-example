@@ -7,10 +7,6 @@ export class SlsNextStack extends cdk.Stack {
     new NextJSLambdaEdge(this, id, {
       ...props,
       serverlessBuildOutDir: "./build",
-      env: {
-        account: process.env.CDK_DEFAULT_ACCOUNT,
-        region: 'us-east-1'
-      }
     });
   }
 }
