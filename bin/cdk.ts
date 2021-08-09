@@ -9,7 +9,11 @@ builder
   .build()
   .then(() => {
     const app = new cdk.App();
-    new SlsNextStack(app, `SlsNextStack`, {});
+    new SlsNextStack(app, `SlsNextStack`, {
+      env: {
+        account: process.env.CDK_DEFAULT_ACCOUNT,
+        region: 'us-east-1'
+    }});
   })
   .catch((e) => {
     console.log(e);
