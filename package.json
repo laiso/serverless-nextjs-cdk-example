@@ -1,13 +1,14 @@
 {
-  "name": "cdk",
+  "name": "serverless-nextjs-cdk-example",
   "version": "0.1.0",
   "bin": {
     "cdk": "bin/cdk.js"
   },
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "test": "jest",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc",
     "cdk": "cdk"
   },
   "devDependencies": {
@@ -19,10 +20,7 @@
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
     "ts-node": "^9.0.0",
-    "typescript": "~3.9.7"
-  },
-  "dependencies": {
-    "@aws-cdk/assert": "^1.75.0",
+    "typescript": "latest",
     "@aws-cdk/aws-certificatemanager": "^1.75.0",
     "@aws-cdk/aws-cloudfront": "^1.75.0",
     "@aws-cdk/aws-cloudfront-origins": "^1.75.0",
@@ -37,9 +35,11 @@
     "@aws-cdk/aws-sqs": "^1.75.0",
     "@aws-cdk/core": "^1.75.0",
     "@sls-next/cdk-construct": "^3.2.0",
-    "next": "11.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
     "source-map-support": "^0.5.16"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   }
 }
