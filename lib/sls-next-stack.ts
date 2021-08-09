@@ -4,8 +4,13 @@ import * as cdk from "@aws-cdk/core";
 export class SlsNextStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props: cdk.StackProps) {
     super(scope, id, props);
-    new NextJSLambdaEdge(this, "NextJsApp", {
-      serverlessBuildOutDir: "./build"
+    new NextJSLambdaEdge(this, id, {
+      ...props,
+      serverlessBuildOutDir: "./build",
+      env: {
+        account: process.env.CDK_DEFAULT_ACCOUNT,
+        region: 'us-east-1'
+      }
     });
   }
 }
